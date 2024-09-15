@@ -1,0 +1,13 @@
+- Para code first con db existente, creamos primero en la solución el proyecto de infraestructura, añadimos los paquetes habituales de ef core, con tools y sqlserver, efcoretoo con carpetas Entities y Data, y ejecutamos:
+
+Scaffold-DbContext "Server=localhost;Database=AdventureWorks2022;Trusted_Connection=True;TrustServerCertificate=true;" Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -Context AdventureWorksContext -OutputDir Entities
+
+Tras eso mejor mover la carpeta Entities de Infrastructure al proyecto de Domain y renombrar los namespaces
+
+TODO: eager, lazy y explicit loading ejemplos con las entidades siguientes:
+
+SELECT distinct ps.Name, COUNT(*) as cnt FROM Production.Product p
+join Production.ProductSubcategory ps on p.ProductSubcategoryID=ps.ProductSubcategoryID
+join Production.ProductCategory pc on ps.ProductCategoryID=pc.ProductCategoryID
+group by ps.Name
+order by cnt desc
