@@ -17,11 +17,10 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdventureWorksExamples.Domain\AdventureWorksExamples.Domain.csproj" />
+    <ProjectReference Include="..\AdventureWorksExamples.Application\AdventureWorksExamples.Application.csproj" />
   </ItemGroup>
 
 </Project>
